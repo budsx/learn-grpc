@@ -12,7 +12,7 @@ import (
 
 func main() {
 	// Dial
-	conn, err := grpc.Dial(":8080", grpc.WithInsecure())
+	conn, err := grpc.Dial("localhost:8080", grpc.WithInsecure())
 	if err != nil {
 		grpclog.Fatalln(err)
 	}
@@ -26,8 +26,6 @@ func main() {
 	if err != nil {
 		grpclog.Fatalln(err)
 	}
-
-	grpclog.Printf("Tes %s", res.Message)
 
 	log.Printf(res.Message)
 }
